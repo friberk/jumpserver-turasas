@@ -2736,7 +2736,7 @@ msgid "Your account has been created successfully"
 msgstr "你的账号已创建成功"
 
 #: jumpserver/context_processor.py:12
-msgid "JumpServer Open Source Bastion Host"
+msgid "TÜRASAŞ JumpServer Privileged Access Management Application"
 msgstr "JumpServer 开源堡垒机"
 
 #: jumpserver/views/celery_flower.py:23

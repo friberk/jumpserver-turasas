@@ -6,10 +6,10 @@ from django.utils.translation import ugettext_lazy as _
 
 default_interface = dict((
     ('logo_logout', static('img/logo.png')),
-    ('logo_index', static('img/logo_text.png')),
-    ('login_image', static('img/login_image.jpg')),
+    ('logo_index', static('img/logo_text_turasas.png')),
+    ('login_image', static('img/login_image_turasas.jpg')),
     ('favicon', static('img/facio.ico')),
-    ('login_title', _('JumpServer Open Source Bastion Host')),
+    ('login_title', _('TÜRASAŞ JumpServer Privileged Access Management Application')),
     ('theme', 'classic_green'),
     ('theme_info', {}),
 ))
@@ -20,7 +20,7 @@ default_context = {
     'LOGIN_WECOM_logo_logout': static('img/login_wecom_logo.png'),
     'LOGIN_DINGTALK_logo_logout': static('img/login_dingtalk_logo.png'),
     'LOGIN_FEISHU_logo_logout': static('img/login_feishu_logo.png'),
-    'COPYRIGHT': 'FIT2CLOUD 飞致云' + ' © 2014-2022',
+    'COPYRIGHT': 'TÜRASAŞ Bilgi Sistemleri Daire Başkanlığı & FIT2CLOUD Tech, Inc.' + ' © 2022',
     'INTERFACE': default_interface,
 }
 
@@ -36,6 +36,3 @@ def jumpserver_processor(request):
         'SECURITY_VIEW_AUTH_NEED_MFA': settings.SECURITY_VIEW_AUTH_NEED_MFA,
     })
     return context
-
-
-
