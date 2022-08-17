@@ -337,7 +337,7 @@ class AuthACLMixin:
             return
 
         if acl.is_action(acl.ActionChoices.reject):
-            raise errors.LoginACLIPAndTimePeriodNotAllowed(username=user.username, request=self.request)
+            raise errors.LoginACLIPAndTimePeriodNotAllowed(user.username, request=self.request)
 
         if acl.is_action(acl.ActionChoices.confirm):
             self.request.session['auth_confirm_required'] = '1'
@@ -377,7 +377,10 @@ class AuthACLMixin:
             raise errors.LoginConfirmWaitError(ticket.id)
         else:
             # rejected, closed
-            raise errors.LoginConfirmOtherError(ticket.id, ticket.get_state_display())
+            ticket_id = ticket.id
+            status = ticket.get_state_display()
+            username = ticket.applicant.username
+            raise errors.LoginConfirmOtherError(ticket_id, status, username)
 
     def get_ticket(self):
         from tickets.models import ApplyLoginTicket
