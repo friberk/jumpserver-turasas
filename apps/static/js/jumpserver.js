@@ -1420,13 +1420,14 @@ function showCeleryTaskLog(taskId) {
 }
 
 function getUserLang(){
-    let userLangEN = document.cookie.indexOf('django_language=en');
-    if (userLangEN === -1){
-        return 'zh-CN'
-    }
-    else{
-        return 'en-US'
-    }
+    // let userLangEN = document.cookie.indexOf('django_language=en');
+    // if (userLangEN === -1){
+    //     return 'zh-CN'
+    // }
+    // else{
+    //     return 'en-US'
+    // }
+    return 'en-US'
 }
 
 function initDateRangePicker(selector, options) {

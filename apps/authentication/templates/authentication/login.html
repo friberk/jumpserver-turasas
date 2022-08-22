@@ -60,6 +60,19 @@
             margin-top: calc((100vh - 470px) / 3);
         }
 
+        @media only screen and (max-width: 992px) {
+            .login-content {
+                height: 100vh;
+                width: auto;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 0px;
+                display: grid;
+                place-items: center;
+                box-shadow: none;
+            }
+        }
+
         body {
             background-color: #f2f2f2;
             height: calc(100vh - (100vh - 470px) / 3);
@@ -293,6 +306,16 @@
 <script type="text/javascript" src="/static/js/plugins/cryptojs/crypto-js.min.js"></script>
 <script type="text/javascript" src="/static/js/plugins/buffer/buffer.min.js"></script>
 <script>
+    function setLangCookie() {
+        var expires = "";
+        var days = 30;
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+        document.cookie = "django_language" + "=" + ("en" || "")  + expires + '; path=/; SameSite=Lax';
+    }
+    setLangCookie();
+
     function doLogin() {
         //公钥加密
         var password = $('#password').val(); //明文密码
@@ -302,4 +325,3 @@
     }
 </script>
 </html>
-
